@@ -15,7 +15,7 @@ class ApiService {
 
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
+      baseURL: import.meta.env.VITE_API_URL || 'http://https://afroconnect-r668.onrender.com/api',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -51,7 +51,7 @@ class ApiService {
             }
 
             const response = await axios.post(
-              `${import.meta.env.VITE_API_URL || 'http://localhost:8000/api'}/token/refresh/`,
+              `${import.meta.env.VITE_API_URL || 'https://afroconnect-r668.onrender.com'}/token/refresh/`,
               { refresh: refreshToken }
             );
 
