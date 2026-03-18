@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="public/afrologo.jpeg" class="rounded-full" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Afro Connect - Smart Investments. Structured Growth. Real Opportunities. A modern investment platform for wealth creation through time-based products and team performance." />
+    <meta name="keywords" content="investment, afro connect, wealth, growth, team income, referral program, investment platform" />
+    <meta property="og:title" content="Afro Connect - Investment Platform" />
+    <meta property="og:description" content="Smart Investments. Structured Growth. Real Opportunities." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://afroconnect.com" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Afro Connect - Investment Platform" />
+    <meta name="twitter:description" content="Smart Investments. Structured Growth. Real Opportunities." />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Additional custom styles -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+      * {
+        font-family: 'Inter', sans-serif;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Custom animations */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+
+    <title>Afro Connect - Smart Investment Platform</title>
+  </head>
+  <body class="antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+  </body>
+</html>
