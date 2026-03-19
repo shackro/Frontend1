@@ -15,7 +15,7 @@ class ApiService {
 
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.VITE_API_URL || 'http://https://afroconnect-r668.onrender.com/api',
+      baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -51,7 +51,7 @@ class ApiService {
             }
 
             const response = await axios.post(
-              `${import.meta.env.VITE_API_URL || 'https://afroconnect-r668.onrender.com'}/token/refresh/`,
+              `${import.meta.env.VITE_API_URL || 'http://localhost:8000/api'}/token/refresh/`,
               { refresh: refreshToken }
             );
 
@@ -449,7 +449,6 @@ class ApiService {
     const response = await this.api.get(url);
     return response.data;
   }
-
     async recalculateTeamStats(): Promise<TeamStats> {
       const response = await this.api.post('/team/stats/recalculate/');
       return response.data;
