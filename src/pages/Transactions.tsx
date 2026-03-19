@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useCurrency } from '../contexts/CurrencyContext';
 import api from '../services/api';
@@ -46,7 +46,7 @@ interface Transaction {
 
 const Transactions: React.FC = () => {
   const { user, updateUser } = useAuth();
-  const { currency, convertAmount, formatAmount, showConverted, setShowConverted } = useCurrency();
+  const { currency, convertAmount, formatAmount, showConverted } = useCurrency();
   const [searchParams] = useSearchParams();
 
   // Minimum deposit amounts
@@ -207,13 +207,13 @@ const Transactions: React.FC = () => {
   };
 
   // Get display amount based on USD value
-  const getDisplayAmount = (usdAmount: number): string => {
-    if (!showConverted) {
-      return usdAmount.toString();
-    }
-    const converted = usdAmount * currency.exchangeRate;
-    return converted.toFixed(2);
-  };
+//   const getDisplayAmount = (usdAmount: number): string => {
+//     if (!showConverted) {
+//       return usdAmount.toString();
+//     }
+//     const converted = usdAmount * currency.exchangeRate;
+//     return converted.toFixed(2);
+//   };
 
   // Format amount for display in the current currency
   const formatDisplayAmount = (amountUSD: number): string => {

@@ -12,9 +12,9 @@ import {
     UserCircleIcon,
     EnvelopeIcon,
     PhoneIcon,
-    CalendarIcon,
-    IdentificationIcon,
-    CurrencyDollarIcon,
+//     CalendarIcon,
+//     IdentificationIcon,
+//     CurrencyDollarIcon,
     CameraIcon,
     PencilIcon,
     CheckBadgeIcon,
@@ -23,7 +23,7 @@ import {
     DocumentTextIcon,
     ClockIcon,
 } from '@heroicons/react/24/outline';
-import { CheckIcon } from '@heroicons/react/20/solid';
+// import { CheckIcon } from '@heroicons/react/20/solid';
 import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -562,7 +562,7 @@ const Profile: React.FC = () => {
                         onChange={(e) => setCurrency(e.target.value as any)}
                         className="w-full px-4 py-2 bg-[#030614] border-2 border-[#F97316] text-white rounded-lg focus:ring-2 focus:ring-[#F97316] focus:border-transparent appearance-none cursor-pointer"
                       >
-                        {availableCurrencies.map((curr) => (
+                        {availableCurrencies.map((curr: any) => (
                           <option key={curr.code} value={curr.code} className="bg-[#0A1929]">
                             {curr.flag} {curr.code} - {curr.symbol} ({curr.name})
                           </option>

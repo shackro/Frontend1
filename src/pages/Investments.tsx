@@ -13,14 +13,9 @@ import {
   BanknotesIcon,
   CreditCardIcon,
   PhoneIcon,
-  CurrencyDollarIcon,
   ClockIcon,
-  CheckCircleIcon,
   XCircleIcon,
   DocumentTextIcon,
-  FunnelIcon,
-  ArrowPathIcon,
-  PrinterIcon,
 } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 
@@ -40,9 +35,9 @@ interface Investment {
 }
 
 const Investments: React.FC = () => {
-  const { user } = useAuth();
-  const { currency, convertAmount, formatAmount, showConverted, setShowConverted } = useCurrency();
-  const [searchParams] = useSearchParams();
+//   const { user } = useAuth();
+//   const { currency, convertAmount, formatAmount, showConverted, setShowConverted } = useCurrency();
+//   const [searchParams] = useSearchParams();
 
   const [investments, setInvestments] = useState<Investment[]>([]);
   const [filteredInvestments, setFilteredInvestments] = useState<Investment[]>([]);

@@ -15,12 +15,12 @@ import {
   CheckCircleIcon,
   XCircleIcon,
 } from '@heroicons/react/24/outline';
-import { CheckIcon } from '@heroicons/react/20/solid';
+// import { CheckIcon } from '@heroicons/react/20/solid';
 import toast from 'react-hot-toast';
 
 const Team: React.FC = () => {
   const { user } = useAuth();
-  const { currency, convertAmount, formatAmount, showConverted, setShowConverted } = useCurrency();
+  const { currency, convertAmount, formatAmount, showConverted } = useCurrency();
   const [stats, setStats] = useState<TeamStats | null>(null);
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [commissions, setCommissions] = useState<TeamCommission[]>([]);
@@ -28,7 +28,7 @@ const Team: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'members' | 'commissions'>('overview');
   const [levelFilter, setLevelFilter] = useState<string>('all');
   const [error, setError] = useState<string | null>(null);
-  const [recalculating, setRecalculating] = useState(false);
+//   const [recalculating, setRecalculating] = useState(false);
 
   useEffect(() => {
     fetchTeamData();
@@ -78,24 +78,24 @@ const Team: React.FC = () => {
     }
   };
 
-    const handleRecalculate = async () => {
-      setRecalculating(true);
-      try {
-        const newStats = await api.recalculateTeamStats();
-        setStats(newStats);
-        toast.success('Team stats recalculated successfully!', {
-          style: {
-            background: '#0A1929',
-            color: '#F97316',
-            border: '1px solid #F97316',
-          },
-        });
-      } catch (error) {
-        toast.error('Failed to recalculate stats');
-      } finally {
-        setRecalculating(false);
-      }
-    };
+//     const handleRecalculate = async () => {
+//       setRecalculating(true);
+//       try {
+//         const newStats = await api.recalculateTeamStats();
+//         setStats(newStats);
+//         toast.success('Team stats recalculated successfully!', {
+//           style: {
+//             background: '#0A1929',
+//             color: '#F97316',
+//             border: '1px solid #F97316',
+//           },
+//         });
+//       } catch (error) {
+//         toast.error('Failed to recalculate stats');
+//       } finally {
+//         setRecalculating(false);
+//       }
+//     };
 
   // Format amount based on selected currency preference
     const formatTeamAmount = (amountUSD: number): string => {
